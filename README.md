@@ -1,5 +1,6 @@
 # BespinGlobal Terraform Training 
 > author: Changsuk Choi
+
 > company: BespinGlobal
 
 ## Benefits of Terragrunt

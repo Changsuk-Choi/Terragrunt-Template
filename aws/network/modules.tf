@@ -71,3 +71,14 @@ module "nat_gateway" {
   tags = var.tags
   name = local.name
 }
+
+module "vpc_endpoint" {
+  source = "./vpc-endpoint"
+
+  vpc_id     = aws_vpc.vpc.id
+  nat_rt_ids = module.route_table.nat_ids
+  aws_region = var.aws_region
+
+  tags = var.tags
+  name = local.name
+}
