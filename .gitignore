@@ -1,0 +1,8 @@
+.terraform
+.terragrunt-cache
+terraform.tfstate
+terraform.tfstate.backup
+terraform.tfstate.lock.info
+.gitsecret/keys/random_seed
+!*.secret
+.idea
