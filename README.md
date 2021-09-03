@@ -1,6 +1,5 @@
-# [![BESPIN](https://bespin-terraform-training.s3.ap-northeast-2.amazonaws.com/img/bespin-favicon-32x32.png)](https://www.bespinglobal.com/) BespinGlobal Terraform Training 
+# BespinGlobal Terraform Training 
 > author: Changsuk Choi
-
 > company: BespinGlobal
 
 ## Benefits of Terragrunt
