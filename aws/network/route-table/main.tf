@@ -46,7 +46,7 @@ resource "aws_route_table" "nat" {
 resource "aws_route" "nat" {
   count = length(var.ngw_ids)
 
-  route_table_id         = element(aws_route_table.nat.*.id, count.index % length(aws_route_table.nat.*.id))
+  route_table_id         = element(aws_route_table.nat.*.id, count.index)
   destination_cidr_block = "0.0.0.0/0"
   nat_gateway_id         = var.ngw_ids[count.index]
 
@@ -57,7 +57,7 @@ resource "aws_route_table_association" "nat" {
   count = length(var.nat_subnet_ids)
 
   subnet_id      = var.nat_subnet_ids[count.index]
-  route_table_id = element(aws_route_table.nat.*.id, count.index % length(aws_route_table.nat.*.id))
+  route_table_id = element(aws_route_table.nat.*.id, count.index)
 }
 
 resource "aws_route_table" "private_cache" {
