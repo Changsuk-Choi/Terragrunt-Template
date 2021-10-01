@@ -16,7 +16,7 @@ resource "aws_instance" "web" {
 
   subnet_id               = element(
                               data.terraform_remote_state.vpc.outputs.nat_subnet_api_ids,  
-                              count.index % var.instance_number
+                              count.index
                             )
   ami                     = var.ami[var.aws_region]
   instance_type           = var.instance_type
@@ -31,6 +31,10 @@ resource "aws_instance" "web" {
     volume_type           = "gp2"
     volume_size           = var.volume_size
     delete_on_termination = true
+  }
+
+  lifecycle {
+    ignore_changes = [ user_data ]
   }
 
   volume_tags = merge(
